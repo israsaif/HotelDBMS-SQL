@@ -14,8 +14,8 @@ public class MyHOTEL {
 			do{
 				System.out.println("1.CREATE TABLE");
 				System.out.println("2.INSERT TABLE ");
-				System.out.println("3.");
-				System.out.println("4.");
+				System.out.println("3.readFromTable");
+				System.out.println("4. getById");
 				System.out.println("5.");
 				System.out.println("6.");
 				System.out.println("7.Exit ");
@@ -52,12 +52,22 @@ public class MyHOTEL {
 			   case 2:
 				 
 				
-				   Hotels HH = new Hotels();
+				  Hotels HH = new Hotels();
 				  HH.insertIntoTable();
-				   
+				  
+//				  Room_Type RTY = new  Room_Type();
+//				  RTY.insertIntoTable2();
+//				  
 				break;
 				
-	           	
+			   case 3:
+				Hotels.readFromTable();
+					
+					break;
+			   case 4:
+					
+						
+						break;
 			}
            }while(true);
           }
