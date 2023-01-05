@@ -105,12 +105,12 @@ public class Hotels {
 					ResultSet resultSet = st.executeQuery(sql);
 					int count=0;
 					while(resultSet.next()&& count<user){
-						Integer id = resultSet.getInt("id"); 
-						String hotel_name = resultSet.getString("hotel_name");
-						String hotel_location = resultSet.getString("hotel_location");
-						Date created_date = resultSet.getDate("created_date");
-						Date updated_date = resultSet.getDate("updated_date");
-						Boolean is_Active = resultSet.getBoolean("is_Active");
+						Integer id = resultSet.getInt(1); 
+						String hotel_name = resultSet.getString(2);
+						String hotel_location = resultSet.getString(3);
+						Date created_date = resultSet.getDate(4);
+						Date updated_date = resultSet.getDate(5);
+						Boolean is_Active = resultSet.getBoolean(6);
 						System.out.println(id+" "+hotel_name+" "+hotel_location+" "+created_date+" "+updated_date+" "+is_Active);
 						count++;
 						 }
@@ -130,43 +130,46 @@ public class Hotels {
 		String password = "root";
 		
 			Scanner sa=new Scanner(System.in);
-			System.out.println("Enter how many users you have to print:");
+			System.out.println("id input from the user:");
 			int user=sa.nextInt();
 			
 			
 		    
-			String sql = "select* getById  from Hotels where id = ?1\"";
-			//Connection, Driver, DriverRegister lines will be exactly same
+			String sql = "select * from Hotels where id ="+user;
+		
 			
 			
 		 
-//			 java.sql.Connection conn = null;
-//			 try {
-//					Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver").newInstance();
-//					DriverManager.registerDriver(driver);
-//					conn = DriverManager.getConnection(url, username, password);
-//					java.sql.Statement st = conn.createStatement();
-//					ResultSet resultSet = st.executeQuery(sql);
-//					int count=0;
-//					while(resultSet.next()&& count<user){
-//						Integer id = resultSet.getInt("id"); 
-//						String hotel_name = resultSet.getString("hotel_name");
-//						String hotel_location = resultSet.getString("hotel_location");
-//						Date created_date = resultSet.getDate("created_date");
-//						Date updated_date = resultSet.getDate("updated_date");
-//						Boolean is_Active = resultSet.getBoolean("is_Active");
-//						System.out.println(id+" "+hotel_name+" "+hotel_location+" "+created_date+" "+updated_date+" "+is_Active);
-//						count++;
-//						 }
-//				
-//					conn.close();
-//				}
-//				catch (Exception ex) {
-//					System.err.println(ex);
-//				}
-//			
+			 java.sql.Connection conn = null;
+			 try {
+					Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver").newInstance();
+					DriverManager.registerDriver(driver);
+					conn = DriverManager.getConnection(url, username, password);
+					java.sql.Statement st = conn.createStatement();
+				ResultSet resultSet = st.executeQuery(sql);
+					int count=0;
+					while(resultSet.next()&& count<user){
+					Integer id = resultSet.getInt(1); 
+						String hotel_name = resultSet.getString(2);
+						String hotel_location = resultSet.getString(3);
+						Date created_date = resultSet.getDate(4);
+					Date updated_date = resultSet.getDate(5);
+						Boolean is_Active = resultSet.getBoolean(6);
+						System.out.println(id+1+" "+hotel_name+1+" "+hotel_location+1+" "+created_date+1+" "+updated_date+1+" "+is_Active);
+						count++;
+						 }
+				
+					conn.close();
+				}
+				catch (Exception ex) {
+					System.err.println(ex);
+				}
+			
        }
 		
+	
+	
+	
 	 }
 	
 	

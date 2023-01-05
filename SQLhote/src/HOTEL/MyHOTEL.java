@@ -66,7 +66,7 @@ public class MyHOTEL {
 					break;
 			   case 4:
 					
-						
+				   Hotels.getById();		
 						break;
 			}
            }while(true);
