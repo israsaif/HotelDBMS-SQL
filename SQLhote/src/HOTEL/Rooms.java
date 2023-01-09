@@ -49,22 +49,34 @@ public class Rooms {
 			String password = "root";
 			
 				Scanner sa=new Scanner(System.in);
-				System.out.println("Enter how many user you want to input:");
-				int user=sa.nextInt();
+				//System.out.println("Enter how many rows you want:");
+				System.out.println("Enter Room_Type  you wants:");
+				int ROOM2=sa.nextInt();
+				
+				System.out.println("Enter hotel name:");
+				int ROOM3=sa.nextInt();
+				
 			    Random rn = new Random();
 				Integer numberToAdd = rn.nextInt(100);
 				
 				         String id="111";  
-						 String room_type_id ="2222";
-						 String hotel_id="1234"; 
+					     String room_type_id ="2222";
+					     String hotel_id="1234"; 
 					     String created_date="2023-01-10";
 					     String	updated_date="2022-05-12";
 					     Integer is_Active=1;
 					   		
-					    for (int i = 0; i <=user; i++) {
+					    for (int i = 0; i <=ROOM2; i++) {
 					    	
-					 String sql = "INSERT INTO Rooms VALUES (" + i+numberToAdd + ",'"+id+(room_type_id+i)+"','" +hotel_id+"','"+created_date+"','"+updated_date+"',"+is_Active+")";
-					 java.sql.Connection conn = null;
+					    	
+					    	
+							 String sql = "select id from  Room_Type where room_type_name ="+ROOM2 + "select id from hotels where hotels name ="+ROOM3;
+							 java.sql.Connection conn = null;
+					    	
+					    	
+					    	
+					 String sql1 = "INSERT INTO Rooms VALUES (" + i+numberToAdd + ",'"+id+(room_type_id+i)+"','" +hotel_id+"','"+created_date+"','"+updated_date+"',"+is_Active+")";
+					 java.sql.Connection conn1 = null;
 					 try {
 							Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver").newInstance();
 							DriverManager.registerDriver(driver);
@@ -86,50 +98,7 @@ public class Rooms {
 		
 	              }
 		}
-		public static void insertIntoTable1(){
-			
-			String url = "jdbc:mysql://localhost:3306/HotelDBMS";
-			String username = "root";
-			String password = "root";
-			
-				Scanner sa=new Scanner(System.in);
-				System.out.println("Enter how many user you want to input:");
-				int user=sa.nextInt();
-			    Random rn = new Random();
-				Integer numberToAdd = rn.nextInt(100);
-		
-				 String id="111";  
-				 String room_type_id ="2222";
-				 String hotel_id="1234"; 
-			     String created_date="2023-01-10";
-			     String	updated_date="2022-05-12";
-			     Integer is_Active=1;
-					   		
-					    for (int i = 0; i <=1; i++) {
-					    	
-					 String sql = "INSERT INTO Rooms VALUES (" + i+numberToAdd +id+(room_type_id+i)+"','"+hotel_id+"','"+updated_date+"',"+is_Active+")";
-					 java.sql.Connection conn = null;
-					 try {
-							Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver").newInstance();
-							DriverManager.registerDriver(driver);
-							conn = DriverManager.getConnection(url, username, password);
-							java.sql.Statement st = conn.createStatement();
-							int m = st.executeUpdate(sql);
-							if (m >= 1) {
-								System.out.println("inserted data successfuly...");
-								
-							} else {
-								System.out.println(" faild inserted data...");
-							}
-							conn.close();
-						}
-						catch (Exception ex) {
-							System.err.println(ex);
-						}
-						
-		
-	              }
-		}
+	
 		public static void readFromTable(){
 			String url = "jdbc:mysql://localhost:3306/HotelDBMS";
 			String username = "root";

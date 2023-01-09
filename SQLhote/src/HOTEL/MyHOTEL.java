@@ -15,7 +15,7 @@ public class MyHOTEL {
 			System.out.println("4.Print 10 hotels");
 			System.out.println("5.Make first 10 hotels 'is_Active' = false");
 			System.out.println("6.Print hotel information by user input");
-
+			System.out.println("7.Insert All");
 			String bb = sa.next();
 			int option = Integer.parseInt(bb);
 
@@ -48,9 +48,8 @@ public class MyHOTEL {
 				Hotels HH = new Hotels();
 				HH.insertIntoTable();
 
-//				  Room_Type RTY = new  Room_Type();
-//				  RTY.insertIntoTable2();
-//				  
+
+				  
 				break;
 
 			case 3:
@@ -75,6 +74,20 @@ public class MyHOTEL {
 				HH3.readFromTable(information);
 				break;
 
+			case 7:
+//				Room_Type ROT = new Room_Type(); 
+//				ROT.insertIntoTable();
+				
+//				EmployeeType EMP = new EmployeeType ();
+//				EMP.insertIntoTable();
+				
+//				Rooms ro = new Rooms();
+//				ro.insertIntoTable();
+//				
+				Employees em = new Employees();
+				em.insertIntoTable();
+				
+				break;
 			}
 		} while (true);
 	}

@@ -45,20 +45,19 @@ public class Room_Type {
 		String password = "root";
 
 		Scanner sa = new Scanner(System.in);
-		System.out.println("Enter how many user you want to input:");
+		System.out.println("Enter how many rows you want in Room_Type:");
 		int user = sa.nextInt();
 		Random rn = new Random();
 		Integer numberToAdd = rn.nextInt(100);
 
 		String room_type_name = "ISRA";
-		String id = "111";
 		String created_date = "2023-01-10";
 		String updated_date = "2022-05-12";
 		Integer is_Active = 1;
 
-		for (int i = 0; i <= user; i++) {
+		for (int i = 1; i <= user; i++) {
 
-			String sql = "INSERT INTO Room_Type VALUES (" + i + numberToAdd + ",'" + (room_type_name + i) + "','" + id
+			String sql = "INSERT INTO Room_Type VALUES (" + i + numberToAdd + ",'" + (room_type_name + i)
 					+ "','" + created_date + "','" + updated_date + "'," + is_Active + ")";
 			java.sql.Connection conn = null;
 			try {
@@ -81,48 +80,7 @@ public class Room_Type {
 		}
 	}
 
-	public static void insertIntoTable1() {
-
-		String url = "jdbc:mysql://localhost:3306/HotelDBMS";
-		String username = "root";
-		String password = "root";
-
-		Scanner sa = new Scanner(System.in);
-		System.out.println("Enter how many user you want to input:");
-		int user = sa.nextInt();
-		Random rn = new Random();
-		Integer numberToAdd = rn.nextInt(100);
-
-		String room_type_name = "ISRA";
-		String id = "111";
-		String created_date = "2023-01-10";
-		String updated_date = "2022-05-12";
-		Integer is_Active = 1;
-
-		for (int i = 0; i <= 1; i++) {
-
-			String sql = "INSERT INTO Room_Type VALUES (" + i + numberToAdd + (room_type_name + i) + "','" + id + "','"
-					+ created_date + "','" + updated_date + "'," + is_Active + ")";
-			java.sql.Connection conn = null;
-			try {
-				Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver").newInstance();
-				DriverManager.registerDriver(driver);
-				conn = DriverManager.getConnection(url, username, password);
-				java.sql.Statement st = conn.createStatement();
-				int m = st.executeUpdate(sql);
-				if (m >= 1) {
-					System.out.println("inserted data successfuly...");
-
-				} else {
-					System.out.println(" faild inserted data...");
-				}
-				conn.close();
-			} catch (Exception ex) {
-				System.err.println(ex);
-			}
-
-		}
-	}
+	
 
 	public static void readFromTable() {
 		String url = "jdbc:mysql://localhost:3306/HotelDBMS";

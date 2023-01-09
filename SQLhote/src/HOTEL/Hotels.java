@@ -39,7 +39,7 @@ public class Hotels {
 		String password = "root";
 
 		Scanner sa = new Scanner(System.in);
-		System.out.println("Enter how many user you want to input:");
+		System.out.println("Enter how many rows you want:");
 		int user = sa.nextInt();
 		Random rn = new Random();
 		Integer numberToAdd = rn.nextInt(100);
@@ -50,7 +50,7 @@ public class Hotels {
 		String updated_date = "2022-05-12";
 		Integer is_Active = 1;
 
-		for (int i = 0; i <= user; i++) {
+		for (int i = 1; i <= user; i++) {
 
 			String sql = "INSERT INTO  Hotels VALUES (" + i + numberToAdd + ",'" + (hotel_name + i) + "','"
 					+ hotel_location + "','" + created_date + "','" + updated_date + "'," + is_Active + ")";
@@ -82,7 +82,7 @@ public class Hotels {
 		String password = "root";
 
 		Scanner sa = new Scanner(System.in);
-		System.out.println("Enter how many user you want to input:");
+		System.out.println("Enter how many rows you want:");
 		int user = sa.nextInt();
 		Random rn = new Random();
 		Integer numberToAdd = rn.nextInt(100);
@@ -93,7 +93,7 @@ public class Hotels {
 		String updated_date = "2022-05-12";
 		Integer is_Active = 1;
 
-		for (int i = 0; i <= 1; i++) {
+		for (int i = 1; i <= 1; i++) {
 
 			String sql = "INSERT INTO  Hotels VALUES (" + i + numberToAdd + ",'" + (hotel_name + i) + "','"
 					+ hotel_location + "','" + created_date + "','" + updated_date + "'," + is_Active + ")";
