@@ -18,6 +18,7 @@ public class Rooms {
 			String sqlDB = "CREATE TABLE Rooms "+
 					  "(id INTEGER not NULL, "+
 					 " room_type_id INTEGER "+" REFERENCES room_type(id),"+
+					 " hotel_id INTEGER "+" REFERENCES Hotels(id),"+
 					 " created_date Date not null, " + 
 					" updated_date Date , " +
 					"is_Active Boolean not null , " +
@@ -50,39 +51,38 @@ public class Rooms {
 			
 				Scanner sa=new Scanner(System.in);
 				//System.out.println("Enter how many rows you want:");
-				System.out.println("Enter Room_Type  you wants:");
+				System.out.println("How many Rooms you wants:");
 				int ROOM2=sa.nextInt();
-				
-				System.out.println("Enter hotel name:");
-				int ROOM3=sa.nextInt();
+//				
+//				System.out.println("Enter hotel name:");
+//				int ROOM3=sa.nextInt();
 				
 			    Random rn = new Random();
 				Integer numberToAdd = rn.nextInt(100);
 				
-				         String id="111";  
-					     String room_type_id ="2222";
-					     String hotel_id="1234"; 
+//				         String id="111";  
+//					     String room_type_id ="2222";
+//					     String hotel_id="1234"; 
 					     String created_date="2023-01-10";
 					     String	updated_date="2022-05-12";
 					     Integer is_Active=1;
-					   		
-					    for (int i = 0; i <=ROOM2; i++) {
+					    for (int i = 4; i <=ROOM2; i++) {
 					    	
 					    	
 					    	
-							 String sql = "select id from  Room_Type where room_type_name ="+ROOM2 + "select id from hotels where hotels name ="+ROOM3;
+//							 String sql = "select id from  Room_Type where room_type_name ="+ROOM2 + "select id from hotels where hotels name ="+ROOM3;
 							 java.sql.Connection conn = null;
 					    	
 					    	
 					    	
-					 String sql1 = "INSERT INTO Rooms VALUES (" + i+numberToAdd + ",'"+id+(room_type_id+i)+"','" +hotel_id+"','"+created_date+"','"+updated_date+"',"+is_Active+")";
+					 String sql1 = "INSERT INTO Rooms VALUES (" + i + ","+210+",'" +187+"','"+created_date+"','"+updated_date+"',"+is_Active+")";
 					 java.sql.Connection conn1 = null;
 					 try {
 							Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver").newInstance();
 							DriverManager.registerDriver(driver);
 							conn = DriverManager.getConnection(url, username, password);
 							java.sql.Statement st = conn.createStatement();
-							int m = st.executeUpdate(sql);
+							int m = st.executeUpdate(sql1);
 							if (m >= 1) {
 								System.out.println("inserted data successfuly...");
 								

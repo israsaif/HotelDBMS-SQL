@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Currency;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -16,7 +17,7 @@ public class Employees {
 		String user = "root";
 		String pass = "root";
 		String sqlDB = "CREATE TABLE Employees " + "(id INTEGER not NULL, " + " employee_type_id INTEGER "
-				+ " REFERENCES Employee_Type(id)," + "room_id INTEGER " + " REFERENCES Hotels(id),"
+				+ " REFERENCES Employee_Type(id)," + "room_id INTEGER " + " REFERENCES Rooms(id),"
 				+ " created_date Date not null , " + " updated_date Date , " + "is_Active Boolean not null , "
 				+ " PRIMARY KEY ( id ))";
 		java.sql.Connection conn = null;
@@ -39,44 +40,53 @@ public class Employees {
 		return false;
 	}
 
-	public static void insertIntoTable() {
+	public static void insertIntoTable(int num) {
 
 		String url = "jdbc:mysql://localhost:3306/HotelDBMS";
 		String username = "root";
 		String password = "root";
 
 		Scanner sa = new Scanner(System.in);
-		System.out.println("Enter how many rows you want:");
-		int Rooms4 = sa.nextInt();
+		
 		Random rn = new Random();
 		Integer numberToAdd = rn.nextInt(100);
 
-		String id = "111";
-		System.out.print(" Enter Employee_type_name");
-		String employee_type_id =sa.next();
+//		String id = "111";
+//		System.out.print(" Enter Employee_type_name");
+//		String Employee_type_name =sa.next();
+//		
+//		System.out.print(" Enter room_type_name");
+//		String room_type_name =sa.next();
 		
-		System.out.print(" Enter room_type_name");
-		String room_type_name =sa.next();
 		
-		
-		String room_id = "1234";
-		String created_date = "2023-01-10";
-		String updated_date = "2022-05-12";
+//		String room_id = "1234";
+		Date created_date = new Date(System.currentTimeMillis());
+		Date updated_date = new Date(System.currentTimeMillis());
 		Integer is_Active = 1;
 
-		for (int i = 0; i <= Rooms4; i++) {
-			 String sql1 = "select id from  Employee_Type where Employee_type_name ="+employee_type_id + "select id from Rooms inner JOIN Room_Type ON Rooms.Room_Type =   room_type_id where Room_Type.room_type_name  ="+room_type_name;
+		
+		
+//		System.out.println();
+		for (int i = 6; i <= num; i++) {
+//			 String sql1 = "select id from  Employee_Type where Employee_type_name ="+Employee_type_name; 
+//			String sql11="select id from Rooms inner JOIN Room_Type ON Rooms.Room_Type =   room_type_id where Room_Type.room_type_name  ="+room_type_name;
 			 java.sql.Connection conn = null;
-			String sql = "INSERT INTO Employees VALUES (" + i + numberToAdd + ",'" + id + (employee_type_id + i) + "','"
-					+ room_id + "','" + created_date + "','" + updated_date + "'," + is_Active + ")";
+			String sql = "INSERT INTO Employees VALUES (" + i + ","  + 278  +","+5+",'"
+					 + created_date + "','" + updated_date + "'," + is_Active + ")";
+//			System.out.println(sql);
 			java.sql.Connection conn1 = null;
 			try {
 				Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver").newInstance();
 				DriverManager.registerDriver(driver);
 				conn = DriverManager.getConnection(url, username, password);
 				java.sql.Statement st = conn.createStatement();
-				int m = st.executeUpdate(sql);
-				if (m >= 1) {
+//				ResultSet m = st.executeQuery(sql);
+//				ResultSet m1 = st.executeQuery(sql1);
+				int m2 = st.executeUpdate(sql);
+//				ResultSet resultSet = st.executeQuery(sql);
+
+
+				if (m2 >= 1) {
 					System.out.println("inserted data successfuly...");
 
 				} else {

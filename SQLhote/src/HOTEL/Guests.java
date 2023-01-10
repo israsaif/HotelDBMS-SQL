@@ -52,21 +52,20 @@ public class Guests {
 		Random rn = new Random();
 		Integer numberToAdd = rn.nextInt(100);
 
-		String id = "111";
-		String guest_name = "alaa";
+		System.out.println("Enter guest_name you want:");
+		String guest_name = sa.next();
+		
 		String guest_phone = "99837455";
-		String guest_accompanying_members = "3";
-		String guest_payment_amount = "40";
+		int guest_accompanying_members = 3;
+		int guest_payment_amount = 40;
 		String created_date = "2023-01-10";
-		String room_id  = "2113";  
-		String hotel_id  = "3324"; 
 		String updated_date = "2022-05-12";
 		Integer is_Active = 1;
 
 		for (int i = 0; i <= user; i++) {
 
-			String sql = "INSERT INTO Guests VALUES (" + i + numberToAdd + ",'" + id + (guest_name + i) + "','"
-					+ guest_phone + "','"+ "','"+guest_accompanying_members +guest_payment_amount+room_id +hotel_id+ created_date + "','" + updated_date + "'," + is_Active + ")";
+			String sql = "INSERT INTO Guests VALUES (" + i + numberToAdd + ",'" + guest_name + "','"
+					+ guest_phone + "',"+guest_accompanying_members +","+guest_payment_amount+","+3+ ","+187+",'"+ created_date + "','" + updated_date + "'," + is_Active + ")";
 			java.sql.Connection conn = null;
 			try {
 				Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver").newInstance();

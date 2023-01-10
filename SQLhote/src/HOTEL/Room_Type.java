@@ -50,14 +50,14 @@ public class Room_Type {
 		Random rn = new Random();
 		Integer numberToAdd = rn.nextInt(100);
 
-		String room_type_name = "ISRA";
+		String room_type_name = "SUITE";
 		String created_date = "2023-01-10";
 		String updated_date = "2022-05-12";
 		Integer is_Active = 1;
 
 		for (int i = 1; i <= user; i++) {
 
-			String sql = "INSERT INTO Room_Type VALUES (" + i + numberToAdd + ",'" + (room_type_name + i)
+			String sql = "INSERT INTO Room_Type VALUES (" + i + ",'" + room_type_name
 					+ "','" + created_date + "','" + updated_date + "'," + is_Active + ")";
 			java.sql.Connection conn = null;
 			try {

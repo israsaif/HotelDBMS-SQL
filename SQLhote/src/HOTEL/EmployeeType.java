@@ -51,15 +51,15 @@ public class EmployeeType {
 		Random rn = new Random();
 		Integer numberToAdd = rn.nextInt(100);
 
-		String id = "111";
-		String employee_type_name = "2222";
+//		String id = "111";
+		String employee_type_name = "DIRECTOR";
 		String created_date = "2023-01-10";
 		String updated_date = "2022-05-12";
 		Integer is_Active = 1;
 
 		for (int i = 1; i <= user; i++) {
 
-			String sql = "INSERT INTO EmployeeType VALUES (" + i + numberToAdd + ",'" + id + (employee_type_name+ i) + "','"
+			String sql = "INSERT INTO EmployeeType VALUES (" + i + numberToAdd + ",'"  + employee_type_name + "','"
 					+ created_date + "','" + updated_date + "'," + is_Active + ")";
 			java.sql.Connection conn = null;
 			try {
