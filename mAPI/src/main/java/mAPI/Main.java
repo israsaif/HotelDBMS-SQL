@@ -29,7 +29,8 @@ public class Main {
 			System.out.println("1.READ API");
 			System.out.println("2.CREATE TABLE");
 			System.out.println("3.Insert API INTO TABLE");
-			
+			System.out.println("4.UPDATE  INTO TABLE");
+			System.out.println("5.delete INTO TABLE");
 			String bb = sa.next();
 			int option = Integer.parseInt(bb);
 
@@ -119,7 +120,25 @@ public class Main {
 				
 				
 				break;
-			
+			case 4:
+				
+				ForAll update=new ForAll();
+				update. updateById();
+				
+				
+				
+				
+				break;	
+				
+				
+				
+			case 5:
+				
+				ForAll delete=new ForAll();
+				 delete.deleteById();
+				 break;	
+					
+				
 			}
 			}bigMenu=false;
 		
