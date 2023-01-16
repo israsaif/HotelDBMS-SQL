@@ -1,22 +1,17 @@
 package mAPI;
 
 public class ReadAPI {
-	String [] WebPage;
-	int state_province;
-	String alpha_two_code;
-	String name;
-	String country;
-	String [] domains;
-	public String[] getWebPage() {
-		return WebPage;
+
+	public String[] getWeb_pages() {
+		return web_pages;
 	}
-	public void setWebPage(String[] webPage) {
-		WebPage = webPage;
+	public void setWeb_pages(String[] web_pages) {
+		this.web_pages = web_pages;
 	}
-	public int getState_province() {
+	public String getState_province() {
 		return state_province;
 	}
-	public void setState_province(int state_province) {
+	public void setState_province(String state_province) {
 		this.state_province = state_province;
 	}
 	public String getAlpha_two_code() {
@@ -43,6 +38,13 @@ public class ReadAPI {
 	public void setDomains(String[] domains) {
 		this.domains = domains;
 	}
+	private String [] web_pages;
+	private String state_province;
+	private String alpha_two_code;
+	private String name;
+	private String country;
+	private String [] domains;
+	
 	
 	
 }
