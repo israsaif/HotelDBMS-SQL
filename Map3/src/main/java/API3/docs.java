@@ -4,7 +4,15 @@ public class docs {
 	private String section_name;
 	private String subsection_name;
 	
-	
+	Byline  byline;
+
+	public Byline getByline() {
+		return byline;
+	}
+
+	public void setByline(Byline byline) {
+		this.byline = byline;
+	}
 	public String getSection_name() {
 		return section_name;
 	}

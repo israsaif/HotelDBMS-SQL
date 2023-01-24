@@ -14,6 +14,12 @@ public class Response {
 	docs[] docs;
 
 
+
+	
+
+	
+	}
+
 	
 	
-}
+
